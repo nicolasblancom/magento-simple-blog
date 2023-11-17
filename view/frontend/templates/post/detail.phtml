@@ -1,0 +1,12 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Nicolasblancom\Blog\ViewModel\Post $postVm */
+$postVm = $block->getData('post_vm');
+$post = $postVm->getDetail();
+?>
+
+<div class="blog-post-detail">
+    <h1><?= $post->getTitle() ?></h1>
+    <p><em><?= __('Created at: %1', $post->getCreatedAt()) ?></em></p>
+    <div><?= $post->getContent() ?></div>
+</div>

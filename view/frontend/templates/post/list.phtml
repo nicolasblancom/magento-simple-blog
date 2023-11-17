@@ -1,0 +1,20 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Nicolasblancom\Blog\ViewModel\Post $postVm */
+$postVm = $block->getData('post_vm');
+$posts  = $postVm->getList();
+?>
+
+<div class="blog-post-list">
+    <h1><?= __('Blog post list') ?></h1>
+    <?php foreach ($posts as $post): ?>
+        <div>
+            <h2><?= $post->getTitle() ?></h2>
+            <p><em><?= $post->getCreatedAt() ?></em></p>
+            <div><?= $post->getContent() ?></div>
+            <br>
+            <hr>
+            <br>
+        </div>
+    <?php endforeach ?>
+</div>
