@@ -1,6 +1,25 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Post Services -->
     <preference for="Nicolasblancom\Blog\Api\Data\PostInterface" type="Nicolasblancom\Blog\Model\Post"/>
     <preference for="Nicolasblancom\Blog\Api\PostRepositoryInterface" type="Nicolasblancom\Blog\Model\PostRepository"/>
+
+    <!-- Post admin grid -->
+    <virtualType name="Nicolasblancom\Blog\Model\ResourceModel\Post\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument xsi:type="string" name="mainTable">nicolasblancom_blog_post</argument>
+            <argument xsi:type="string" name="resourceModel">Nicolasblancom\Blog\Model\ResourceModel\Post</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument xsi:type="array" name="collections">
+                <item xsi:type="string" name="nicolasblancom_blog_post_listing_data_source">
+                    Nicolasblancom\Blog\Model\ResourceModel\Post\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>
