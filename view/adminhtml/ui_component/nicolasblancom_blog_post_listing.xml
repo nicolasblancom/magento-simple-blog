@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- data provider -->
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                nicolasblancom_blog_post_listing.nicolasblancom_blog_post_listing_data_source
+            </item>
+        </item>
+    </argument>
+    <settings>
+        <deps>
+            <dep>nicolasblancom_blog_post_listing.nicolasblancom_blog_post_listing_data_source</dep>
+        </deps>
+        <spinner>nicolasblancom_blog_post_columns</spinner>
+    </settings>
+
+    <!-- data source -->
+    <dataSource name="nicolasblancom_blog_post_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Nicolasblancom_Blog::post</aclResource>
+        <dataProvider name="nicolasblancom_blog_post_listing_data_source"
+                      class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <!-- columns -->
+    <columns name="nicolasblancom_blog_post_columns">
+        <column name="id">
+            <settings>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="title">
+            <settings>
+                <label translate="true">Title</label>
+            </settings>
+        </column>
+        <column name="content">
+            <settings>
+                <label translate="true">Content</label>
+            </settings>
+        </column>
+        <column name="created_at">
+            <settings>
+                <label translate="true">Created at</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
