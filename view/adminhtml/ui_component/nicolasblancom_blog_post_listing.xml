@@ -53,5 +53,6 @@
                 <label translate="true">Created at</label>
             </settings>
         </column>
+        <actionsColumn name="actions" class="Nicolasblancom\Blog\Ui\Component\Listing\Column\Actions"/>
     </columns>
 </listing>
