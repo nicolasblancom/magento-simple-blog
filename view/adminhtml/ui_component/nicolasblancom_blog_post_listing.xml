@@ -31,6 +31,17 @@
         </dataProvider>
     </dataSource>
 
+    <!-- toolbar -->
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <paging name="listing_paging"/>
+        <columnsControls name="columns_controls"/>
+        <bookmark name="bookmarks"/>
+    </listingToolbar>
+
+
     <!-- columns -->
     <columns name="nicolasblancom_blog_post_columns">
         <column name="id">
