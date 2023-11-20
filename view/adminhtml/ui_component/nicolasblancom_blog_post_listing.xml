@@ -43,6 +43,7 @@
         <columnsControls name="columns_controls"/>
         <bookmark name="bookmarks"/>
         <filters name="listing_filters"/>
+        <filterSearch name="fulltext"/>
     </listingToolbar>
 
     <!-- columns -->

@@ -8,6 +8,9 @@
         },
         "constraint": {
             "PRIMARY": true
+        },
+        "index": {
+            "NICOLASBLANCOM_BLOG_POST_TITLE": true
         }
     }
 }
