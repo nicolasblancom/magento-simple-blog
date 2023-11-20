@@ -41,7 +41,6 @@
         <bookmark name="bookmarks"/>
     </listingToolbar>
 
-
     <!-- columns -->
     <columns name="nicolasblancom_blog_post_columns">
         <column name="id">
@@ -62,6 +61,7 @@
         <column name="created_at" component="Magento_Ui/js/grid/columns/date">
             <settings>
                 <label translate="true">Created at</label>
+                <sorting>desc</sorting>
             </settings>
         </column>
         <actionsColumn name="actions" class="Nicolasblancom\Blog\Ui\Component\Listing\Column\Actions"/>
