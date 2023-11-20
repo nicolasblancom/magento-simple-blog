@@ -44,19 +44,24 @@ class Actions extends Column
             if (!isset($item['id'])) {
                 continue;
             }
+            $id = $item['id'];
 
             $item[$this->getData('name')] = [
-                'edit' => [
+                'edit'   => [
                     'href'  => $this->urlBuilder->getUrl('blog/post/edit', [
-                        'id' => $item['id'],
+                        'id' => $id,
                     ]),
                     'label' => __('Edit'),
                 ],
                 'delete' => [
-                    'href' => $this->urlBuilder->getUrl('blog/post/delete', [
-                        'id' => $item['id'],
+                    'href'    => $this->urlBuilder->getUrl('blog/post/delete', [
+                        'id' => $id,
                     ]),
-                    'label' => __('Delete'),
+                    'label'   => __('Delete'),
+                    'confirm' => [
+                        'title'   => __('Delete id: %1', $id),
+                        'message' => __('Are you sure you want to delete post %1?', $id)
+                    ]
                 ],
 
             ];
