@@ -20,6 +20,9 @@
     <dataSource name="nicolasblancom_blog_post_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <updateUrl path="mui/index/render"/>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
         </settings>
         <aclResource>Nicolasblancom_Blog::post</aclResource>
         <dataProvider name="nicolasblancom_blog_post_listing_data_source"
@@ -39,6 +42,7 @@
         <paging name="listing_paging"/>
         <columnsControls name="columns_controls"/>
         <bookmark name="bookmarks"/>
+        <filters name="listing_filters"/>
     </listingToolbar>
 
     <!-- columns -->
@@ -46,22 +50,26 @@
         <column name="id">
             <settings>
                 <label translate="true">ID</label>
+                <filter>textRange</filter>
             </settings>
         </column>
         <column name="title">
             <settings>
                 <label translate="true">Title</label>
+                <filter>text</filter>
             </settings>
         </column>
         <column name="content">
             <settings>
                 <label translate="true">Content</label>
+                <filter>text</filter>
             </settings>
         </column>
         <column name="created_at" component="Magento_Ui/js/grid/columns/date">
             <settings>
                 <label translate="true">Created at</label>
                 <sorting>desc</sorting>
+                <filter>dateRange</filter>
             </settings>
         </column>
         <actionsColumn name="actions" class="Nicolasblancom\Blog\Ui\Component\Listing\Column\Actions"/>
