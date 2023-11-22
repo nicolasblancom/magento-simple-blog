@@ -11,3 +11,4 @@ It has the next features:
 - service contracts for Post (Api)
 - repository for Post
 - REST API exposed (get by id, delete by id, save, update)
+- Admin grid for Post
